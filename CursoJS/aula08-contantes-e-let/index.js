@@ -13,3 +13,10 @@ console.log(nome, sobrenome, 'tem', idade, 'anos, pesa', peso, 'kg');
 console.log('Tem', alturaEmM, 'de altura e seu IMC é de', indiceDeMassaCorporal);
 console.log(nome, sobrenome, 'nasceu em', anoNascimento);
 console.log(' ');
+// Também posso utiliza o sinal de + para unir os valores
+console.log(nome + ' ' + sobrenome);
+
+// Template strings
+// Para usar variavies dentro de uma string com `crazes` usa-se ${variavel}
+
+console.log(`Tem ${alturaEmM} de altura e seu IMC é de ${indiceDeMassaCorporal}`);
