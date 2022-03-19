@@ -14,3 +14,5 @@ console.log('Tem', alturaEmM, 'de altura e seu IMC é de', indiceDeMassaCorporal
 console.log(nome, sobrenome, 'nasceu em', anoNascimento);
 console.log(' ');
 
+// Teste
+
