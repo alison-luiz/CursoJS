@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: rgb(20, 20, 20);
+    font-family: "Roboto", sans-serif;
+    font-size: 62.5%;
+}
+
+.box-logo {
+    width: 100vw;
+    height: 5rem;
+}
+
+div h1 a img.logo {
+    width: 12rem;
+    padding: 2rem;
+}

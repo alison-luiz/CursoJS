@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 40px;
+}
+
+
+.grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+/*  grid-template-columns: 1fr 1fr 1fr; Fragmenta a coluna em 3 grids*/
+/*  grid-template-columns: repeat(3, 1fr); Repete a função 1fr por 3x */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* auto-fill tenta encaixar as colunas no min 320px ou max 1fr fragmento */
+    grid-template-rows: 2fr;
+    gap: 30px
+}
+
+.grid div {
+    background-color: tomato;
+    min-height: 100px;
+}
