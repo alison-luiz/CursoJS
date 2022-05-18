@@ -1,5 +1,5 @@
 const alunos = ['Alison', 'Andre', 'Kauan'];
-                 0         1        2
+//                 0         1        2
 
 
 console.log(alunos);
