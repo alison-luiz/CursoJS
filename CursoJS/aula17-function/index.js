@@ -36,4 +36,5 @@ console.log(constFunction(25));
 
 const functionCompacta = x => x ** 0.5;
 
+
 console.log(functionCompacta(25));
