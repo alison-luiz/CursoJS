@@ -1,13 +1,4 @@
-//const pessoa1 = {
-//    nome: 'Alison',
-//    sobrenome: 'Luiz',
-//    idade: 23
-//};
-
-//console.log(pessoa1.nome);
-
-
-function criaPessoa (nome, sobrenome, idade) {
+/* function criaPessoa (nome, sobrenome, idade) {
     return {
         nome: nome,
         sobrenome: sobrenome,
@@ -15,4 +6,18 @@ function criaPessoa (nome, sobrenome, idade) {
     };
 }
 
-const pessoa = criaPessoa('Alison', 'Luiz', 23)
+const pessoa1 = criaPessoa('Alison', 'Luiz', 23);
+
+console.log(pessoa1.nome); */
+
+const pessoa1 = {
+    nome: 'Alison',
+    sobrenome: 'Luiz',
+    idade: 23,
+
+    diz() {
+        console.log(`${this.nome} ${this.sobrenome} está falando oi...`)
+    },
+}
+
+pessoa1.diz();
