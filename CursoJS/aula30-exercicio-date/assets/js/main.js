@@ -66,11 +66,11 @@ function dataFormatadaTexto(data, semana, mes) {
     const hora = data.getHours();
     const min = data.getMinutes();
 
-    const diaSemana = diaSemanaTexto;
-    const mesAno = mesDoAnoTexto;
+    const diaSemana = semana;
+    const mesAno = mes;
 
     return `${diaSemana}, ${dia} de ${mesAno} de ${ano} - ${hora}:${min}`
 }
 
-const h1 = document.querySelector('.container h1');
+const h1 = document.querySelector('#dataFormatada');
 h1.innerHTML = dataFormatada.toString();
