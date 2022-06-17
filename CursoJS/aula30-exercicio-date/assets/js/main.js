@@ -60,11 +60,15 @@ function fDiaSemana(dia) {
 
 const dataFormatada = dataFormatadaTexto(dataAtual, diaSemanaTexto, mesDoAnoTexto);
 
+function zeroAEsquerda(data) {
+    return data >= 10 ? data : `0${data}`
+}
+
 function dataFormatadaTexto(data, semana, mes) {
-    const dia = data.getDate();
-    const ano = data.getFullYear();
-    const hora = data.getHours();
-    const min = data.getMinutes();
+    const dia = zeroAEsquerda(data.getDate());
+    const ano = zeroAEsquerda(data.getFullYear());
+    const hora = zeroAEsquerda(data.getHours());
+    const min = zeroAEsquerda(data.getMinutes());
 
     const diaSemana = semana;
     const mesAno = mes;
