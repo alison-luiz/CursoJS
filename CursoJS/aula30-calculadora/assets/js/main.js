@@ -69,5 +69,5 @@ function calculo(num1, num2, operador) {
 }
 
 function setResultado(resultado) {
-  getResultado.innerHTML = resultado;
+  getResultado.innerHTML = `O valor calculado é: ${resultado}`;
 }
