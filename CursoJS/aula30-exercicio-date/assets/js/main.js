@@ -8,7 +8,6 @@ const mesDoAnoTexto = fMesDoAno(mesDoAno);
 
 function fMesDoAno(mes) {
     let mesDoAnoTexto;
-
     switch (mes) {
         case 1:
             return mesDoAnoTexto = 'Janeiro'
@@ -39,7 +38,6 @@ function fMesDoAno(mes) {
 
 function fDiaSemana(dia) {
     let diaSemanaTexto;
-
     switch (dia) {
         case 0:
             return diaSemanaTexto = 'Domingo';
@@ -69,11 +67,10 @@ function dataFormatadaTexto(data, semana, mes) {
     const ano = zeroAEsquerda(data.getFullYear());
     const hora = zeroAEsquerda(data.getHours());
     const min = zeroAEsquerda(data.getMinutes());
-
+    const seg = zeroAEsquerda(data.getSeconds());
     const diaSemana = semana;
     const mesAno = mes;
-
-    return `${diaSemana}, ${dia} de ${mesAno} de ${ano} - ${hora}:${min}`
+    return `${diaSemana}, ${dia} de ${mesAno} de ${ano} - ${hora}:${min}:${seg}`
 }
 
 const h1 = document.querySelector('#dataFormatada');

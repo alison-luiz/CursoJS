@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <section class="container">
+        <h1>Calculadora</h1>
+        <form id="calculadora">
+            <label for="input-number-1">Numero 1</label>
+            <input type="text" id="input-number-1">
+            <br>
+            <label for="input-number-2">Numero 2</label>
+            <input type="text" id="input-number-2">
+            <p>Selecione o operador:</p>
+            <div>
+                <input id="operador-somar" name="tipoentrada" type="checkbox" value="+" onclick="marcaDesmarca(this.id)"> <label>Somar</label>
+                <input id="operador-subtrair" name="tipoentrada" type="checkbox" value="-" onclick="marcaDesmarca(this.id)"> <label>Subtrair</label>
+                <input id="operador-dividir" name="tipoentrada" type="checkbox" value="/" onclick="marcaDesmarca(this.id)"> <label>Dividir</label>
+                <input id="operador-multiplicar" name="tipoentrada" type="checkbox" value="*" onclick="marcaDesmarca(this.id)"> <label>Multiplicar</label>
+            </div>
+            <button>Enviar</button>
+        </form>
+        <div id="resultado"></div>
+    </section>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
