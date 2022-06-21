@@ -54,20 +54,23 @@ function marcado(x) {
 }
 
 let calculoFinal;
+let numeroCalculado;
 
 function calculo(num1, num2, operador) {
   switch (operador) {
     case 'somar':
-      return calculoFinal = num1 + num2;
+      return calculoFinal = num1 + num2, numeroCalculado = `${num1} + ${num2}`;
     case 'subtrair':
-      return calculoFinal = num1 - num2;
+      return calculoFinal = num1 - num2, numeroCalculado = `${num1} - ${num2}`;
     case 'dividir':
-      return calculoFinal = num1 / num2;
+      return calculoFinal = num1 / num2, numeroCalculado = `${num1} / ${num2}`;
     case 'multiplicar':
-      return calculoFinal = num1 * num2;
+      return calculoFinal = num1 * num2, numeroCalculado = `${num1} * ${num2}`;
+    case undefined:
+      return calculoFinal = 'Selecione um operador!'
   }
 }
 
 function setResultado(resultado) {
-  getResultado.innerHTML = `O valor calculado é: ${resultado}`;
+  getResultado.innerHTML = `${numeroCalculado} = ${resultado}`;
 }

@@ -1,4 +1,4 @@
-const dataAtual = new Date();
+/* const dataAtual = new Date();
 
 const diaSemana = dataAtual.getDay();
 const mesDoAno = dataAtual.getMonth() + 1;
@@ -75,3 +75,20 @@ function dataFormatadaTexto(data, semana, mes) {
 
 const h1 = document.querySelector('#dataFormatada');
 h1.innerHTML = dataFormatada.toString();
+*/
+
+
+
+
+const metodoUm = document.querySelector('#metodoUm');
+const metodoDois = document.querySelector('#metodoDois');
+
+const data = new Date();
+
+const opcoes = {
+    dateStyle: 'full',
+    timeStuyle: 'short'
+};
+
+metodoUm.innerHTML = data.toLocaleDateString('pt-BR', opcoes);
+metodoDois.innerHTML = data.toLocaleString('pt-BR', { dateStyle: 'full', timeStyle: 'short'});
