@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+:root {
+    --primary-color: rgb(17, 86, 102);
+    --primary-color-dark: rgb(9, 48, 56);
+    --secondary-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(../img/large-triangles.svg);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.menu {
+    max-width: 150px;
+    min-height: 100vh;
+    background-color: var(--secondary-color);
+    border: solid 1px var(--primary-color);
+}
