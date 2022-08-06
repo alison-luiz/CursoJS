@@ -16,9 +16,17 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-.menu {
-    max-width: 150px;
-    min-height: 100vh;
+.menu-lateral {
     background-color: var(--secondary-color);
-    border: solid 1px var(--primary-color);
+    box-shadow: 4px 6px 15px -9px #000000;
+    max-width: 250px;
+    height: 100vh;
+}
+
+.menu {
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 80%;
+    min-height: 90%;
+    display: flex;
 }
