@@ -10,5 +10,5 @@ console.log(num1.toString(2)); // Representação binaria do numero
 
 console.log(num3.toFixed(2)); // Deixa somente duas casas decimais no numero
 
-console.log(Number.isInteger(num1)); // Se a variavel é um numero intenro ou não
+console.log(Number.isInteger(num1)); // Se a variavel é um numero inteiro ou não
 console.log(Number.isInteger(num2));

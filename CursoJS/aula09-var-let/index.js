@@ -3,10 +3,6 @@
 
 // console.log(nome);
 
-
-
-
-
 // TIPOS DE DADOS PRIMITIVOS
 
 const nome = 'Alison';
@@ -20,6 +16,5 @@ let nomeAluno; // undefined -> não aponta para local nenhum na memoria
 let sobrenomeAluno = null; // Nulo -> não aponta para local nenhum na memoria
 
 const boolean = true; // Boolean tem o valor de true ou false (valor lógico)
-
 
 console.log(typeof nomeAluno, sobrenomeAluno);

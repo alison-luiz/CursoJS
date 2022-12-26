@@ -5,7 +5,9 @@ let varA = 'A'; // Para -> B
 let varB = 'B'; // Para -> C
 let varC = 'C'; // Para -> A
 
-const temp = varA; // Crio uma constante para salvar o valor da variavel na memoria
+console.log(varA, varB, varC);
+
+let temp = varA; // Crio uma constante para salvar o valor de uma das variavel na memoria
 
 // Altero os valores da variavel let
 
@@ -15,14 +17,15 @@ varC = temp;
 
 console.log(varA, varB, varC);
 
-
 // OUTRA MANEIRA DE FAZER A ALTERACAO
 // MAIS MODERNA
 
-let varAA = 'A'; // Para -> B
-let varBB = 'B'; // Para -> C
-let varCC = 'C'; // Para -> A
+let a = 'A'; // Para -> B
+let b = 'B'; // Para -> C
+let c = 'C'; // Para -> A
 
-[varAA, varBB, varCC] = [varBB, varCC, varAA]
+console.log(a, b, c);
 
-console.log(varAA, varBB, varCC)
+[a, b, c] = [b, c, a]
+
+console.log(a, b, c)

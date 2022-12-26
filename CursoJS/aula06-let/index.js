@@ -33,4 +33,4 @@ console.log(semvalor);
 
 // Não podemos redeclarar variaives com let
 
-// NÃO UTILIZE VAR, UTILIZE SEMPRE LET - SEMPRE QUE FOR VARIR ALGO NO CODIGO
+// NÃO UTILIZE VAR, UTILIZE SEMPRE LET - SEMPRE QUE FOR VARIAR ALGO NO CODIGO

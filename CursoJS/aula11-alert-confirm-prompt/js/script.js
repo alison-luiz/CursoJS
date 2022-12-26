@@ -1,19 +1,14 @@
 // alert('Mensagem de alerta');
-
 // confirm('Deseja realmente excluir?');
-
 // prompt('Digite seu texto aqui');
-
-
 // const confirma = confirm('Deseja realmente apagar?');
-
 // let confirmando = confirm('Qualquer mensagem aqui');
 
 let num1 = prompt('Digite o primeiro numero que deseja');
 let num2 = prompt('Digite o valor que voce quer somar');
 
-num1 = Number(num1);
-num2 = parseInt(num2);
+num1 = Number(num1); // Transformando o valor obtido no prompt para number
+num2 = parseInt(num2); // Pegando a parte inteiro do valor obtido no prompt
 
 let soma = num1 + num2;
 
