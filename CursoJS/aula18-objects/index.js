@@ -21,3 +21,5 @@ const pessoa1 = {
 }
 
 pessoa1.diz();
+
+// Objeto se cria dentro do escopo usando {}
