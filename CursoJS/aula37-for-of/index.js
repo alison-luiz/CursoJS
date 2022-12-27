@@ -15,7 +15,7 @@ for (let x in nome) {
 }
 
 // Exemplo usando for of
-// Usado oara retornar o valor em si
+// Usado para retornar o valor em si
 // Vai retornar o valor dos indices do array
 for (let valor of nome) {
     console.log(valor);

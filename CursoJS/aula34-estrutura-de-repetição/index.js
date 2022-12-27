@@ -1,5 +1,4 @@
 /* 
-
 For -> 
 
 Precisa de 3 condições dentro da sua função () separadas por ; (1; 2; 3)

@@ -17,3 +17,6 @@ const numArrays = [
 ]
 
 console.log(numArrays[2][2])
+
+const [lista1, lista2, lista3] = numArrays;
+console.log(lista1, lista2, lista3);

@@ -19,5 +19,14 @@ const { endereco: {rua, numero} } = pessoa;
 console.log(rua, numero);
 
 // Para atribuir o resto do objeto é o mesmo modo feito no array, usando ...
-const { nome: nomePessoa, ...resto } = pessoa
+const { nome: nomePessoa, ...resto } = pessoa;
 console.log(nomePessoa, resto);
+
+const { 
+    endereco: { 
+        rua: residencia = 'Rua.',
+        numero: residenciaNumero
+    }
+} = pessoa;
+
+console.log(residencia, residenciaNumero);
