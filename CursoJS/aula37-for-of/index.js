@@ -10,7 +10,8 @@ for (let i = 0; i < nomes.length; i++) {
 // --> Usado para retornar índices ou chaves (strings, arrays ou objetos)
 // Vai retornar o indice do array, usamos a variavel original + o for in pra puxar o valor
 for (let x in nomes) {
-    console.log(nomes[x])
+    console.log(nomes[x]);
+    console.log(x);
 }
 
 // Exemplo usando for of
