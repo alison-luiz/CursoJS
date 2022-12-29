@@ -26,15 +26,3 @@ body {
     padding: 20px;
     border-radius: 10px;
 }
-
-.timer {
-    font-size: 3em;
-}
-
-.start {
-    color:aquamarine;
-}
-
-.pause {
-    color: rgb(209, 72, 72);
-}
