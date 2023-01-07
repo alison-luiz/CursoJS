@@ -1,93 +1,156 @@
-const inputTask = document.querySelector(".input-add-task"); // Selecionando o input
-const btnTask = document.querySelector(".btn-task"); // Selecionando o botão
-const task = document.querySelector(".task"); // Selecionando a <ul>
+const inputTask = document.querySelector(".input-add-task");
+const btnTask = document.querySelector(".btn-task");
+const task = document.querySelector(".task");
+let positionArray;
+let taskEdit;
+let controlEditing = false
 
-// Esta função tem objetivo de criar o elemento do html <li> e retornar
 function createLi() {
   const li = document.createElement("li");
   return li;
 }
 
-// Esta função principal vai fazer o seguinte:
-// - Salvar em uma const 'li' os valores da função createLi() - que no caso cria o elemento li do html
-// - Salvar na constante  'li' - innetText - o valor passado para criar a task
-// - Criar um filho na <ul> - passando os valores salvos na const 'li'
-// - Chamar a função que limpa o input e o deixa em foco
-// - Chamar a função para criar o botão Clear. - adicionado como filho do 'li'
-// - Chamar a função saveTasks() para salvar a informação no Storage
 function createTask(TaskValue) {
   const li = createLi();
   li.innerText = TaskValue;
   task.appendChild(li);
   clearInput();
-  createBtnClear(li);
+  createBtn(li);
   saveTasks();
 }
 
-// Função para limpar o valor do input e o deixar em foco na pagina.
 function clearInput() {
   inputTask.value = "";
   inputTask.focus();
 }
 
-// Função vai executar o seguinte:
-// - Pegar o texto passado pelo argumento e adicionar um espaço em branco.
-// - Criar uma const com elemento de botão do html.
-// - Colocar um nome neste botão.
-// - Setar atributos de classe e title neste botão.
-// - Adicionar o botão como um filho do 'li' - este 'li' já foi adicionado a pagina anteriormente.
-function createBtnClear(li) {
+function createBtn(li) {
   li.innerText += " ";
   const btnClear = document.createElement("button");
+  const btnEdit = document.createElement("button");
   btnClear.innerText = "Clear";
+  btnEdit.innerText = "Edit";
   btnClear.setAttribute("class", "btn-clear");
   btnClear.setAttribute("title", "Clear task!");
+  btnEdit.setAttribute("class", "btn-edit");
+  btnEdit.setAttribute("title", "Edit task!");
   li.appendChild(btnClear);
+  li.appendChild(btnEdit);
 }
 
-// Toda vez que requisitada esta função vai executar:
-// - Criar uma const onde ira salvar todos elementos 'li'
-// - Criar uma const vazia de arrays
-// - Laço de repetição na const dos elementos 'li' salvando no array..
-// - Criar uma const JSON salvando informação desse array
 function saveTasks() {
   const liTasks = task.querySelectorAll("li");
   const listTasks = [];
-
   for (let task of liTasks) {
     let TasksText = task.innerText;
     TasksText = TasksText.replace("Clear", "").trim();
+    TasksText = TasksText.replace("Edit", "").trim();
     listTasks.push(TasksText);
   }
   const tasksJson = JSON.stringify(listTasks);
   localStorage.setItem("tasks", tasksJson);
 }
 
-// Ao clicar no botão 'Clear" ele faz a validação e remove todo elemento da pagina com .parentElement
 document.addEventListener("click", function (e) {
   const element = e.target;
   if (element.classList.contains("btn-clear")) {
-    element.parentElement.remove();
-    saveTasks();
+    if (controlEditing === false) {
+      element.parentElement.remove();
+      saveTasks();
+    }
   }
 });
 
-// Ao clicar no botão faz a validação do conteudo e chama a função createTask() - passando o valor do input
+document.addEventListener("click", function(e) {
+  const element = e.target;
+  if (controlEditing === false) {
+    if (element.classList.contains("btn-edit")) {
+      taskEdit = element.parentNode.textContent;
+      taskEdit = taskEdit.replace(" ClearEdit", "");
+      positionArray = element.parentNode
+      buttonAddTask = document.querySelector('.btn-task');
+      document.querySelector('.btn-task').remove();
+      element.parentElement.querySelector('.btn-clear').remove();
+      element.remove();
+      controlEditing = true;
+      editTaskInput(taskEdit);
+    }
+  }
+});
+
+function editTaskInput(edit) {
+  inputTask.value = edit;
+  inputTask.focus();
+      const btnSave = document.createElement('button');
+      const btnCancel = document.createElement("button");
+      btnSave.innerText = "Save";
+      btnCancel.innerText = "Cancel";
+      btnSave.setAttribute("class", "btn-save");
+      btnSave.setAttribute("title", "Save task!");
+      btnCancel.setAttribute("class", "btn-cancel");
+      btnCancel.setAttribute("title", "Cancel edit!");
+      inputTask.parentNode.appendChild(btnSave);
+      inputTask.parentNode.appendChild(btnCancel);
+}
+
+document.addEventListener('click', function(e) {
+  const element = e.target;
+  if (element.classList.contains("btn-save")) {
+    if (!inputTask.value) return;
+    taskEdit = inputTask.value;
+    positionArray.innerText = taskEdit + ' ';
+    const btnClear = document.createElement("button");
+    const btnEdit = document.createElement("button");
+    btnClear.innerText = "Clear";
+    btnEdit.innerText = "Edit";
+    btnClear.setAttribute("class", "btn-clear");
+    btnClear.setAttribute("title", "Clear task!");
+    btnEdit.setAttribute("class", "btn-edit");
+    btnEdit.setAttribute("title", "Edit task!");
+    positionArray.appendChild(btnClear);
+    positionArray.appendChild(btnEdit);
+    controlEditing = false;
+    element.parentElement.querySelector('.btn-cancel').remove();
+    element.remove();
+    inputTask.parentNode.appendChild(btnTask);
+    inputTask.value = '';
+    inputTask.focus();
+    saveTasks();
+  }
+  if (element.classList.contains("btn-cancel")) {
+    element.parentElement.querySelector('.btn-save').remove();
+    element.remove(); 
+    inputTask.parentNode.appendChild(btnTask);
+    inputTask.value = '';
+    inputTask.focus();
+    const btnClear = document.createElement("button");
+    const btnEdit = document.createElement("button");
+    btnClear.innerText = "Clear";
+    btnEdit.innerText = "Edit";
+    btnClear.setAttribute("class", "btn-clear");
+    btnClear.setAttribute("title", "Clear task!");
+    btnEdit.setAttribute("class", "btn-edit");
+    btnEdit.setAttribute("title", "Edit task!");
+    positionArray.appendChild(btnClear);
+    positionArray.appendChild(btnEdit);
+    controlEditing = false;
+  }
+});
+
 btnTask.addEventListener("click", function () {
   if (!inputTask.value) return;
   createTask(inputTask.value);
 });
 
-// Ao clicar no botão faz a validação do conteudo e chama a função createTask() - passando o valor do input
 inputTask.addEventListener("keypress", function (e) {
   if (e.keyCode === 13) {
-    if (!inputTask.value) return;
-    createTask(inputTask.value);
+    if (controlEditing === false) {
+      if (!inputTask.value) return;
+      createTask(inputTask.value);
+    }
   }
 });
 
-// Toda vez que abrir a pagina esta função será a primeira a ser executada, puxando a informação salva
-// e criando os elementos da pagina pela função createTask() - passando as informações salvas.
 function addSavedTasks() {
   const tasks = localStorage.getItem("tasks");
   const listTasks = JSON.parse(tasks);
