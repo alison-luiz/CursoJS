@@ -6,4 +6,16 @@ function retornaFuncao() {
 }
 
 const funcao = retornaFuncao();
-console.log(funcao);
+console.dir(funcao);
+console.log(funcao());
+
+function returnClosures(nome) {
+    return function() {
+        return nome;
+    }
+}
+
+const closures1 = returnClosures('Alison');
+const closures2 = returnClosures('Luiz');
+
+console.log(closures1(), closures2());
