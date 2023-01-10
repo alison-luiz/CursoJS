@@ -1,8 +1,11 @@
+// Função que retorna um valor aleatório entre 1000 e 3000
 function rand(min = 1000, max = 3000) {
     const num = Math.random() * (max - min) + min;
     return Math.floor(num);
 }
 
+
+// Utilizando callback para controlar as execuções das funções
 function f1(callback) {
     setTimeout(function() {
         console.log('f1');
@@ -22,6 +25,8 @@ function f3(callback) {
     }, rand());
 }
 
+// Maneiras de chamar as funções utilizando callback
+// 1º formato
 f1(function() {
     f2(function() {
         f3(function() {
@@ -30,17 +35,14 @@ f1(function() {
     });
 });
 
-
+// 2º formato
 f1(f1CallBack);
-
 function f1CallBack() {
     f2(f2CallBack);
 }
-
 function f2CallBack() {
     f3(f3CallBack);
 }
-
 function f3CallBack() {
     console.log('Olá mundo!')
 }
