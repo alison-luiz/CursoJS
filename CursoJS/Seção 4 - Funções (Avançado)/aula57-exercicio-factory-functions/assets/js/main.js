@@ -11,6 +11,7 @@ function criaCalculadora() {
       this.display.addEventListener('keyup', e => {
         if (e.keyCode === 13) {
           this.realizaConta();
+          this.display.focus();
         }
       });
     },
