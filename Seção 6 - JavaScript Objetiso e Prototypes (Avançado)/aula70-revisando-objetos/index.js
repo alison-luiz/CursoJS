@@ -36,3 +36,29 @@ console.log(pessoa2.getAnoNascimento());
 for (chaves in pessoa2) {
     console.log(chaves);
 };
+
+// Factory functions / Constructor functions / Classes
+
+// Factory functions
+function criaPessoa(nome, sobrenome) {
+     return {
+        nome,
+        sobrenome,
+        nomeCompleto() {
+            return `${this.nome} ${this.sobrenome}`;
+        }
+     };
+}
+
+const criaPessoa1 = criaPessoa('Alison', 'Luiz');
+console.log(criaPessoa1.nomeCompleto());
+
+// Constructor functions
+function NewPessoa(nome, sobrenome) {
+    this.nome = nome;
+    this.sobrenome = sobrenome;
+    
+    Object.freeze(this);
+}
+
+const newPessoa1 = new NewPessoa('Alison', 'Luiz');
